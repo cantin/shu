@@ -1,0 +1,14 @@
+'zh-CN':
+  admin:
+    new:
+      char_length_up_to: '长度不得超过'
+    index:
+      refresh: '应用'
+      export_current_action: '导出当前数据'
+      add_filter: '添加过滤条件'
+      selected: '已选'
+      export_selected: '导出已选'
+      delete_selected: '删除已选'
+    export:
+      click_to_reverse_selection: '点击进行反选'
+

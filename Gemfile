@@ -39,6 +39,7 @@ gem 'draper'
 gem 'pry'
 gem 'client_side_validations'
 gem "simple_form"
+gem "ransack"
 
 group :test do
   gem 'rspec-rails'
