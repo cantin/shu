@@ -1,0 +1,9 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @tab.name
+
+= link_to 'Edit', edit_tab_path(@tab)
+\|
+= link_to 'Back', tabs_path

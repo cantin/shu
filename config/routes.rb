@@ -1,5 +1,11 @@
 Shu::Application.routes.draw do
 
+  resources :tabs
+
+  resources :book_commets
+
+  resources :books
+
   mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
 
   devise_for :users

@@ -1,0 +1,27 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @book.name
+%p
+  %b Content abstract:
+  = @book.content_abstract
+%p
+  %b Author abstract:
+  = @book.author_abstract
+%p
+  %b Author:
+  = @book.author
+%p
+  %b Isbn:
+  = @book.ISBN
+%p
+  %b Uploader:
+  = @book.uploader
+%p
+  %b Upload date:
+  = @book.upload_date
+
+= link_to 'Edit', edit_book_path(@book)
+\|
+= link_to 'Back', books_path

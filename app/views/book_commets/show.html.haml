@@ -1,0 +1,9 @@
+%p#notice= notice
+
+%p
+  %b Commet:
+  = @book_commet.commet
+
+= link_to 'Edit', edit_book_commet_path(@book_commet)
+\|
+= link_to 'Back', book_commets_path
