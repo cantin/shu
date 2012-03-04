@@ -14,7 +14,18 @@ Shu::Application.configure do
   config.action_controller.perform_caching = false
 
   # Don't care if the mailer can't send
-  config.action_mailer.raise_delivery_errors = false
+  config.action_mailer.raise_delivery_errors = true
+
+  config.action_mailer.default_url_options = { :host => "localhost:3000" }
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    :address => "smtp.163.com",
+    :port => 25,
+    :domain => "163.com",
+    :authentication => :login,
+    :user_name => "testforshu@163.com", #你的邮箱
+    :password => "testfor123456" #你的密码
+  }
 
   # Print deprecation notices to the Rails logger
   config.active_support.deprecation = :log
@@ -34,7 +45,4 @@ Shu::Application.configure do
 
   # Expands the lines which load the assets
   config.assets.debug = true
-
-  #defaule mailer
-  config.action_mailer.default_url_options = { :host => 'localhost:3000' }
 end

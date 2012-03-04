@@ -1,16 +1,14 @@
 Shu::Application.routes.draw do
 
   resources :tabs
-
-  resources :book_commets
-
   resources :books
+  resources :homes
 
   mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
 
   devise_for :users
 
-  root to: 'home#index'
+  root to: 'homes#index'
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
