@@ -25,7 +25,9 @@
     = f.label :uploader
     = f.text_field :uploader
   .field
-    = f.label :upload_date
-    = f.date_select :upload_date
+    = f.label :uploaded_date
+    = f.date_select :uploaded_date
+  .field
+    = f.file_field :content
   .actions
     = f.submit 'Save'

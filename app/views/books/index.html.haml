@@ -8,7 +8,7 @@
     %th Author
     %th Isbn
     %th Uploader
-    %th Upload date
+    %th Uploaded date
     %th
     %th
     %th
@@ -21,7 +21,7 @@
       %td= book.author
       %td= book.ISBN
       %td= book.uploader
-      %td= book.upload_date
+      %td= book.uploaded_date
       %td= link_to 'Show', book
       %td= link_to 'Edit', edit_book_path(book)
       %td= link_to 'Destroy', book, :confirm => 'Are you sure?', :method => :delete
