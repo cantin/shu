@@ -3,7 +3,7 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
 
-    @follow_books = @user.follows_by_type "Book"
+    @follow_books = @user.following_by_type "Book"
     @upload_books = @user.books
     @commet = @user.commets
   end
