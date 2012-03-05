@@ -41,6 +41,8 @@ gem 'pry'
 gem 'client_side_validations'
 gem "simple_form"
 gem "ransack"
+gem 'ffaker'
+gem 'bootstrap-sass'
 
 group :test do
   gem 'rspec-rails'

@@ -3,6 +3,5 @@ class AddContentAndCoverToBooks < ActiveRecord::Migration
     add_column :books, :content, :string
 
     add_column :books, :cover, :string
-
   end
 end

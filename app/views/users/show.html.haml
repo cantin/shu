@@ -1,0 +1,24 @@
+.user-show
+  .p "#{@user.name}关注的书"
+  .ul
+    = @follow_books.each do |b|
+      .li= image_tag b.cover.url
+      .li= b.name
+      .li= b.author
+      .li= b.author_abstract
+      .li= b.ISBN
+      .li= b.content_abstract
+  .p "#{@user.name}上传的书"
+  .ul
+    = @upload_books.each do |b|
+      .li= image_tag b.cover.url
+      .li= b.name
+      .li= b.author
+      .li= b.author_abstract
+      .li= b.ISBN
+      .li= b.content_abstract
+  .p "#{@user.name}评论的书"
+  .ul
+    = @commet.each do |c|
+      .li "#{@user.name}对#{c.book.name}的评论"
+      .li= c.commet

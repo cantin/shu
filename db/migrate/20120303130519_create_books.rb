@@ -6,8 +6,7 @@ class CreateBooks < ActiveRecord::Migration
       t.text :author_abstract
       t.string :author
       t.string :ISBN
-      t.string :uploader
-      t.date :uploaded_date
+      t.belongs_to :user
 
       t.timestamps
     end

@@ -19,8 +19,7 @@ ActiveRecord::Schema.define(:version => 20120304022401) do
     t.text     "author_abstract"
     t.string   "author"
     t.string   "ISBN"
-    t.string   "uploader"
-    t.date     "uploaded_date"
+    t.integer  "user_id"
     t.datetime "created_at",       :null => false
     t.datetime "updated_at",       :null => false
     t.string   "content"
@@ -29,6 +28,8 @@ ActiveRecord::Schema.define(:version => 20120304022401) do
 
   create_table "commets", :force => true do |t|
     t.text     "commet"
+    t.integer  "user_id"
+    t.integer  "book_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end

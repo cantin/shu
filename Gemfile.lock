@@ -93,6 +93,7 @@ GEM
     factory_girl_rails (1.7.0)
       factory_girl (~> 2.6.0)
       railties (>= 3.0.0)
+    ffaker (1.13.0)
     ffi (1.0.11)
     haml (3.1.4)
     haml-rails (0.3.4)
@@ -226,6 +227,7 @@ DEPENDENCIES
   acts-as-taggable-on
   acts_as_api
   acts_as_follower
+  bootstrap-sass
   capybara
   carrierwave
   client_side_validations
@@ -233,6 +235,7 @@ DEPENDENCIES
   devise
   draper
   factory_girl_rails
+  ffaker
   haml
   haml-rails
   jquery-rails
