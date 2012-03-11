@@ -16,11 +16,10 @@
   %b Isbn:
   = @book.ISBN
 %p
-  %b Uploader:
-  = @book.uploader
-%p
-  %b Uploaded date:
-  = @book.uploaded_date
+  %b Image:
+  = image_tag @book.cover.url
+  %b down
+  = link_to 'down', @book.content.url
 
 = link_to 'Edit', edit_book_path(@book)
 \|

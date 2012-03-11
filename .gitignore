@@ -16,3 +16,5 @@
 /public/system/
 /public/uploads/
 /config/database.yml
+/.DS_store
+/public/.DS_store
