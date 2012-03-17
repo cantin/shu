@@ -11,10 +11,11 @@
 /db/*.sqlite3
 
 # Ignore all logfiles and tempfiles.
+/coverage/
+/config/database.yml
 /log/*.log
 /tmp
 /public/system/
 /public/uploads/
-/config/database.yml
 /.DS_store
 /public/.DS_store

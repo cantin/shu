@@ -13,10 +13,6 @@ gem 'rails', '3.2.1'
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
-
-  # See https://github.com/sstephenson/execjs#readme for more supported runtimes
-  # gem 'therubyracer'
-
   gem 'uglifier', '>= 1.0.3'
 end
 
@@ -43,12 +39,21 @@ gem "simple_form"
 gem "ransack"
 gem 'ffaker'
 gem 'bootstrap-sass'
+gem 'spork-rails'
+gem 'thin'
 
 group :test do
+  gem 'simplecov'
   gem 'rspec-rails'
   gem 'capybara'
+  gem 'capybara-webkit'
+  gem 'database_cleaner'
   gem 'shoulda-matchers'
   gem 'factory_girl_rails'
+  gem 'guard-rails'
+  gem "guard-bundler"
+  gem "guard-rspec"
+  gem "guard-spork"
 end
 
 # To use ActiveModel has_secure_password
