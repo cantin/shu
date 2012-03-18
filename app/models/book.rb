@@ -9,4 +9,10 @@ class Book < ActiveRecord::Base
   mount_uploader :content, ContentUploader
 
   acts_as_followable
+
+  class << self
+    def most_commented_books amount
+      Book.includes(:comments).group(id)
+    end
+  end
 end

@@ -19,4 +19,20 @@ describe Book do
     it { should belong_to :user }
     it { should have_many :comments }
   end
+
+  describe '.most_commented_books' do
+    before do
+      10.times.each do |i|
+        b = FactoryGirl.create :book
+        i.times.each do
+          FactoryGirl.create :comment, commentable: b
+        end
+      end
+    end
+
+    let(:mb) { binding.pry;Book.most_commented_books 5 }
+
+    it { mb.should hava(5).items }
+    it { mb.first.comments.should have(9).items }
+  end
 end

@@ -3,6 +3,9 @@
 end
 
 100.times.each do |i|
-  Book.create(name: Faker::Product.product_name, author: Faker::Name.name)
+  b = Book.create(name: Faker::Product.product_name, author: Faker::Name.name)
+  i.times.each do
+    b.comments.create(title: Faker::Name.name, comment: Faker::LoremCN.words)
+  end
 end
 
