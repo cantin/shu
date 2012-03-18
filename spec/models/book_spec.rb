@@ -17,6 +17,5 @@ describe Book do
 
   describe "attributes" do
     it { should belong_to :user }
-    it { should have_many :commets }
   end
 end

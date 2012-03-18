@@ -26,6 +26,7 @@ gem "haml"
 gem "haml-rails"
 gem 'acts-as-taggable-on'
 gem 'acts_as_api'
+gem 'acts_as_commentable'
 gem 'validates_timeliness'
 gem 'settingslogic'
 gem 'ransack'

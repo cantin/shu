@@ -14,11 +14,4 @@ FactoryGirl.define do
     password "123456"
     password_confirmation "123456"
   end
-
-  factory :commet, class: Commet do
-    association :user, factory: :user
-    association :book, factory: :book
-
-    commet Faker::Product.model
-  end
 end

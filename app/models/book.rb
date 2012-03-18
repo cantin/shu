@@ -1,6 +1,5 @@
 class Book < ActiveRecord::Base
   belongs_to :user
-  has_many :commets
 
   validates :name, presence: true
   validates :author, presence: true

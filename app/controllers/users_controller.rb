@@ -5,6 +5,5 @@ class UsersController < ApplicationController
 
     @follow_books = @user.following_by_type "Book"
     @upload_books = @user.books
-    @commet = @user.commets
   end
 end
