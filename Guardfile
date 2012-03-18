@@ -1,6 +1,8 @@
 # A sample Guardfile
 # More info at https://github.com/guard/guard#readme
 
+notification :off
+
 group 'backend' do
   guard 'bundler' do
     watch('Gemfile')

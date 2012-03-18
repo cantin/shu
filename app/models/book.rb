@@ -1,5 +1,6 @@
 class Book < ActiveRecord::Base
   belongs_to :user
+  acts_as_commentable
 
   validates :name, presence: true
   validates :author, presence: true

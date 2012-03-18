@@ -9,9 +9,9 @@ feature 'index page' do
     end
 
     (100..105).each do |i|
-      b = FactoryGirl.create :book,ISBN: (1 + i)
+      b = FactoryGirl.create :book,ISBN: (1 + i), user: @user
       i.times.each do |j|
-        FactoryGirl.create :comment, book: b
+        FactoryGirl.create :comment, commentable: b, user: @user
       end
     end
   end

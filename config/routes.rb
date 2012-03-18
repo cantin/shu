@@ -1,7 +1,5 @@
 Shu::Application.routes.draw do
 
-
-  resources :tabs
   resources :books
   resources :homes
 

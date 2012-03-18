@@ -55,6 +55,14 @@ group :test do
   gem "guard-bundler"
   gem "guard-rspec"
   gem "guard-spork"
+
+  # notification
+  #if RUBY_PLATFORM =~ /darwin/
+    #gem 'ruby_gntp'
+  #elsif RUBY_PLATFORM =~ /linux/
+    #gem 'rb-inotify'
+    #gem 'libnotify'
+  #end
 end
 
 # To use ActiveModel has_secure_password

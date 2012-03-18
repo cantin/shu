@@ -14,4 +14,10 @@ FactoryGirl.define do
     password "123456"
     password_confirmation "123456"
   end
+
+  factory :comment, class: Comment do
+    association :commentable, factory: :book
+    title Faker::Name.name
+    comment Faker::LoremCN.words
+  end
 end
