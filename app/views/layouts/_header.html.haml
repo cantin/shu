@@ -1,0 +1,23 @@
+.navbar.navbar-fixed-top
+  .navbar-inner
+    .container
+      %a.btn.btn-navbar{ 'data-toggle' => 'collapse', 'data-target' => '.nav-collapse' }
+      %a.brand{href: '/'} 书
+      .nav-collapse
+        %ul.nav
+          %li
+            = link_to '书籍', books_path
+          %li
+            = link_to '上传', new_book_path
+          %li
+            = link_to '论坛', '/'
+          %li
+            = link_to '成员', 'users_path'
+        %form.navbar-search.pull-left{ action: 'books/search' }
+          %input.search-query.span3{ placeholder: '输入书籍名查找' }
+        %ul.nav.pull-right
+          - if current_user
+            = render partial: 'layouts/user_profile'
+          - else
+            = render partial: 'layouts/guest_profile'
+

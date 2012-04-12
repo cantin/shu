@@ -12,7 +12,7 @@ class Book < ActiveRecord::Base
 
   class << self
     def most_commented_books amount
-      Book.includes(:comments).group(id)
+      Book.includes(:comments).select('count(comments.commentable_id)').group('comments.commentable_id').limit(amount).order("count('comments.commentable_id') desc")
     end
   end
 end
