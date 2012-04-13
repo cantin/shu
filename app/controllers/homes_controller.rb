@@ -5,5 +5,6 @@ class HomesController < ApplicationController
     @user ||= current_user
     @books = Book.includes(:user).page(params[:page]).per(10)
     @mc_books = Book.most_commented_books 10
+    @tags = Book.tag_counts_on(:tags)
   end
 end

@@ -1,0 +1,13 @@
+- books.each do |book|
+  .book-cover= image_tag book.cover.medium.url, class: 'thumbnail'
+  .clearfix
+    %label.inline-label 书名：
+    = link_to book.name, book_path(book), class: 'name'
+  .clearfix
+    %label.inline-label 作者：
+    %span.author= book.author
+  %p<
+    = link_to(book.user.name, user_path(book.user)) if book.user
+    上传于
+    = book.created_at
+= paginate books if page

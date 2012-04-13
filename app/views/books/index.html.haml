@@ -1,27 +1,14 @@
-%h1 Listing books
-
-%table
-  %tr
-    %th Name
-    %th Content abstract
-    %th Author abstract
-    %th Author
-    %th Isbn
-    %th
-    %th
-    %th
-
+.book-list
   - @books.each do |book|
-    %tr
-      %td= book.name
-      %td= book.content_abstract
-      %td= book.author_abstract
-      %td= book.author
-      %td= book.ISBN
-      %td= link_to 'Show', book
-      %td= link_to 'Edit', edit_book_path(book)
-      %td= link_to 'Destroy', book, :confirm => 'Are you sure?', :method => :delete
-
-%br
-
-= link_to 'New Book', new_book_path
+    .book-cover= image_tag book.cover.medium.url, class: 'thumbnail'
+    .clearfix
+      %label.inline-label 书名：
+      = link_to book.name, book_path(book), class: 'name'
+    .clearfix
+      %label.inline-label 作者：
+      %span.author= book.author
+    %p<
+      = link_to(book.user.name, user_path(book.user)) if book.user
+      上传于
+      = book.created_at
+= paginate @books
