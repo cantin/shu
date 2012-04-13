@@ -1,0 +1,13 @@
+@import "mixin";
+
+label.inline-label {
+ display: inline;
+}
+
+.login-form-wrapper {
+  margin: 100px 230px;
+
+  h1{
+    @include h2-title
+  }
+}

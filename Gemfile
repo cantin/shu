@@ -17,7 +17,6 @@ group :assets do
 end
 
 gem 'jquery-rails'
-gem 'acts-as-taggable-on'
 gem 'acts_as_follower'
 gem 'therubyracer'
 gem 'devise'
@@ -42,6 +41,8 @@ gem 'ffaker'
 gem 'bootstrap-sass'
 gem 'spork-rails'
 gem 'thin'
+gem 'kaminari'
+
 
 group :test do
   gem 'simplecov'
@@ -50,11 +51,19 @@ group :test do
   gem 'capybara-webkit'
   gem 'database_cleaner'
   gem 'shoulda-matchers'
-  gem 'factory_girl_rails'
+  gem 'factory_girl_rails', require: false
   gem 'guard-rails'
   gem "guard-bundler"
   gem "guard-rspec"
   gem "guard-spork"
+
+  # notification
+  #if RUBY_PLATFORM =~ /darwin/
+    #gem 'ruby_gntp'
+  #elsif RUBY_PLATFORM =~ /linux/
+    #gem 'rb-inotify'
+    #gem 'libnotify'
+  #end
 end
 
 # To use ActiveModel has_secure_password
