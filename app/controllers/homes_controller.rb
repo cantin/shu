@@ -3,7 +3,7 @@ class HomesController < ApplicationController
 
   def index
     @user ||= current_user
-    @books = Book.all
-    @mc_books = Book.most_commented_books
+    @books = Book.includes(:user).page(params[:page]).per(10)
+    @mc_books = Book.most_commented_books 10
   end
 end

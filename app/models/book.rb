@@ -9,10 +9,11 @@ class Book < ActiveRecord::Base
   mount_uploader :content, ContentUploader
 
   acts_as_followable
+  acts_as_taggable
 
   class << self
     def most_commented_books amount
-      Book.includes(:comments).select('count(comments.commentable_id)').group('comments.commentable_id').limit(amount).order("count('comments.commentable_id') desc")
+      Book.joins(:comments).group('books.id').order('count(comments.commentable_id) desc').limit(amount)
     end
   end
 end

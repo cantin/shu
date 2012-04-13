@@ -30,9 +30,9 @@ describe Book do
       end
     end
 
-    let(:mb) { binding.pry;Book.most_commented_books 5 }
+    let(:mb) { Book.most_commented_books 5 }
 
-    it { mb.should hava(5).items }
-    it { mb.first.comments.should have(9).items }
+    it { mb.length.should == 5 }
+    it { mb.first.comments.length.should == 9 }
   end
 end

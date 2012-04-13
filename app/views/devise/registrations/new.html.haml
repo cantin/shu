@@ -1,0 +1,16 @@
+.content
+  #registration
+    %h1 会员注册
+    = simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name), :validate => true) do |f|
+      .clearfix
+        = f.label :email
+        .input= f.text_field :email, :placeholder => '电子邮箱', :label => '电子邮箱', :validate => { :presence => true }
+      .clearfix
+        = f.label :password
+        .input= f.password_field:password, :placeholder => '密码', :label => '密码', :validate => { :confirmation => true, :presence => true }
+      .clearfix
+        = f.label :password_confirmation
+        .input= f.password_field :password_confirmation, :placeholder => '确认密码', :label => '确认密码', :validate => { :presence => true }
+      .actions
+        %button.btn.large.primary{ :type => 'submit' }= '注册'
+

@@ -1,0 +1,45 @@
+@mixin rounded-conner($pixel) {
+  border-radius: $pixel;
+  -moz-border-radius: $pixel;
+  -webkit-border-radius: $pixel;
+}
+
+@mixin h2-title {
+  text-align: left;
+  padding: 30px 0px 0px 30px;
+  border-bottom: solid 3px #ccc;
+  background-color: #eee;
+}
+
+@mixin bootstrap-btn {
+  -webkit-border-horizontal-spacing: 0px;
+  -webkit-border-vertical-spacing: 0px;
+  -webkit-box-shadow: rgba(255, 255, 255, 0.199219) 0px 1px 0px 0px inset, rgba(0, 0, 0, 0.046875) 0px 1px 2px 0px;
+  background-color: #FAA732;
+  background-image: -webkit-linear-gradient(top, rgb(251, 180, 80), rgb(248, 148, 6));
+
+  border: 1px solid;
+  background-repeat: repeat-x;
+  border-radius: 4px;
+  border-bottom-width: 1px;
+  border-collapse: separate;
+  border-left-color: rgba(0, 0, 0, 0.0976562);
+  border-bottom-color: rgba(0, 0, 0, 0.246094);
+  border-right-color: rgba(0, 0, 0, 0.0976562);
+  border-top-color: rgba(0, 0, 0, 0.0976562);
+
+  box-shadow: rgba(255, 255, 255, 0.199219) 0px 1px 0px 0px inset, rgba(0, 0, 0, 0.046875) 0px 1px 2px 0px;
+  color: white;
+  cursor: pointer;
+  display: inline-block;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 13px;
+  height: 18px;
+  line-height: 18px;
+  margin: 0px;
+  max-width: none;
+  padding: 4px 10px 4px 10px;
+  text-align: center;
+  text-decoration: none;
+  text-shadow: rgba(0, 0, 0, 0.246094) 0px -1px 0px;
+}

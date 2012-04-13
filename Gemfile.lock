@@ -278,6 +278,7 @@ DEPENDENCIES
   haml
   haml-rails
   jquery-rails
+  kaminari
   mini_magick
   mysql2
   pry

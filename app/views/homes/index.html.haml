@@ -1,1 +1,13 @@
-%p show
+.content
+  .fl.w600
+    .book-toolbar
+      %h2 所有书籍
+      .book-order
+        -#%span 排序：
+    .book-list
+      - @books.each do |book|
+        .book-cover= image_tag book.cover.medium.url, class: 'thumbnail'
+        .name= link_to book.name, book_path(book)
+        %p.author= book.author
+        %p.isbn= book.ISBN
+        %p.uploader= book.user

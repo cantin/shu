@@ -12,3 +12,6 @@
  *= require_tree .
 */
 
+.content {
+  margin-top: 50px;
+}

@@ -18,7 +18,7 @@ feature 'index page' do
 
   describe 'while user login' do
     before do
-      user_login @user
+      user_login(@user)
     end
 
     scenario '' do
