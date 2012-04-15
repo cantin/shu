@@ -13,8 +13,10 @@
             = link_to '论坛', '/'
           %li
             = link_to '成员', users_path
-        %form.navbar-search.pull-left{ action: 'books/search' }
-          %input.search-query.span3{ placeholder: '输入书籍名查找' }
+        = csrf_meta_tags
+        %form.navbar-search.pull-left{ action: '/books/search', method: :post }
+          %input{:type=>"hidden", :name=>"authenticity_token", :value=>form_authenticity_token.to_s}
+          %input.search-query.span3{ placeholder: '输入书籍名查找', name: 'book_name' }
         %ul.nav.pull-right
           - if current_user
             = render partial: 'layouts/user_profile'

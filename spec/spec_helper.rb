@@ -31,6 +31,13 @@ Spork.prefork do
 
   Capybara.javascript_driver = :webkit
 
+  #added chrome driver
+  #requirement: chromedriver ps: can use `brew install chromedriver` command in mac
+  #usage: driver: :chrome
+  Capybara.register_driver :chrome do |app|
+    Capybara::Selenium::Driver.new(app, :browser => :chrome)
+  end
+
   #Requires supporting ruby files with custom matchers and macros, etc,
   # in spec/support/ and its subdirectories.
   Dir[Rails.root.join("spec/support/**/*.rb")].each {|f| require f}
