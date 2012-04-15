@@ -1,13 +1,16 @@
 class BooksController < ApplicationController
-  # GET /books
-  # GET /books.json
+  skip_before_filter :authenticate_user!, only: [:index, :search]
   def index
-    @books = Book.all
+    @books = Book.includes(:user).page(params[:page]).per(10)
+    @mc_books = Book.most_commented_books 10
+    @tags = Book.tag_counts_on(:tags)
 
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @books }
-    end
+    render 'homes/index'
+  end
+
+  def search
+    q = { name_cont: params[:book_name] }
+    @books = Book.search(q).result
   end
 
   # GET /books/1
