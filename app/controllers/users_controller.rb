@@ -11,4 +11,10 @@ class UsersController < ApplicationController
     @follow_books = @user.following_by_type "Book"
     @upload_books = @user.books
   end
+
+  def books
+    @books = current_user.books.page(params[:page]).per(10)
+
+    render 'homes/index'
+  end
 end

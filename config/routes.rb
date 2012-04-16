@@ -4,6 +4,8 @@ Shu::Application.routes.draw do
   resources :books
   resources :homes
   get "/books/tags/:name" => 'books#tags'
+  get '/user/books' => 'users#books'
+  post '/books/:id/comment' => 'comments#create', as: :comments_path
 
   mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
 

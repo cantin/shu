@@ -13,5 +13,23 @@
   %h3.author_abstract 作者简介......
   %p.intro= @book.author_abstract
 .download
-  %h3.download 下载......
+  %h3 下载......
   = link_to @book.name, @book.content.url
+.comment
+  %h3 书评......
+  %ul
+  - @book.comments.includes(:user).each do |c|
+    %li
+      %p= "标题：#{c.title}"
+      %p= "评论者：#{c.user.name}"
+      %p= "评论：#{c.comment}"
+.commenting
+  %h3 写下你的书评
+  - if current_user
+    = simple_form_for(@comment, html: { class: 'form-horizontal' }, url: "/books/#{@book.id}/comment") do |f|
+      = f.input :title, label: '标题'
+      = f.input :comment, label: '评论', input_html: { rows: 8, style: "margin: 0px; width: 500px" }
+      = f.button :submit, value: '提交'
+  - else
+    %p 请登录后评论
+    = link_to '登录', new_user_session_path, class: 'btn'

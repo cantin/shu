@@ -22,6 +22,7 @@ class BooksController < ApplicationController
   # GET /books/1
   # GET /books/1.json
   def show
+    @comment = Comment.new
     @book = Book.find(params[:id])
 
     respond_to do |format|

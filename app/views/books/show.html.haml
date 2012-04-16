@@ -1,4 +1,8 @@
 .content
+  -if flash[:notice]
+    .alert
+      %a.close{ 'data-dismiss' => "alert" } X
+      = flash[:notice]
   .fl.w600
     .book-show
       = render partial: 'books/show'
