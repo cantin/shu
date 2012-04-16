@@ -1,24 +1,18 @@
-.user-show
-  .p "#{@user.name}关注的书"
-  .ul
-    = @follow_books.each do |b|
-      .li= image_tag b.cover.url
-      .li= b.name
-      .li= b.author
-      .li= b.author_abstract
-      .li= b.ISBN
-      .li= b.content_abstract
-  .p "#{@user.name}上传的书"
-  .ul
-    = @upload_books.each do |b|
-      .li= image_tag b.cover.url
-      .li= b.name
-      .li= b.author
-      .li= b.author_abstract
-      .li= b.ISBN
-      .li= b.content_abstract
-  .p "#{@user.name}评论的书"
-  .ul
-    = @commet.each do |c|
-      .li "#{@user.name}对#{c.book.name}的评论"
-      .li= c.commet
+.content
+  .user-show
+    %h3 #{@user.name}
+    = link_to '关注他', "javascript:void(0)", class: 'following-user', value: "#{@user.id}"
+    %h3 #{@user.name}关注的人
+    %ul
+      - @follow_user.each do |u|
+        %li
+          = image_tag u.avatar.small.url
+          = link_to u.name, user_path(u)
+    %h3 #{@user.name}上传的书
+    = render partial: 'books/list', locals: { books: @upload_books, page: false }
+    %h3 #{@user.name}评论的书
+    %ul
+      - @comment.each do |c|
+        %li
+          %p= "#{@user.name}对#{c.commentable.name}的评论"
+          %p= "评论：#{c.comment}"
