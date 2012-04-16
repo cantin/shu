@@ -6,6 +6,7 @@
     %p= "ISBN：#{@book.ISBN}"
     %p= "添加者：#{@book.user.name}" if @book.user
     %p= "添加时间：#{@book.created_at}"
+    %p= "标签：#{@book.tags.map { |t| t.name }.join(",")}"
 .abstract
   %h3.content_abstract 内容简介......
   %p.intro= @book.content_abstract

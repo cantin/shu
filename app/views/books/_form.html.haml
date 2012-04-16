@@ -1,9 +1,10 @@
 .form.container.master-container
   = simple_form_for(@book, :html => {:class => 'form-horizontal' }) do |f|
-    = f.input :name
-    = f.input :content_abstract
-    = f.input :author_abstract
-    = f.input :author
-    = f.input :ISBN
-    = f.input :content
-    = f.button :submit
+    = f.input :name, label: '书名'
+    = f.input :author, label: '作者'
+    = f.input :ISBN, label: 'ISBN'
+    = f.input :tag_list, label: '标签(以逗号分隔)'
+    = f.input :content, label: '上传书籍'
+    = f.input :author_abstract, label: '作者简介', input_html: { rows: 8, style: "margin: 0px; width: 500px" }
+    = f.input :content_abstract, label: '内容简介', input_html: { rows: 8, style: "margin: 0px; width: 500px" }
+    = f.button :submit, value: '提交'
