@@ -11,6 +11,8 @@ class Book < ActiveRecord::Base
   acts_as_followable
   acts_as_taggable
 
+  default_scope order "created_at desc"
+
   class << self
     def most_commented_books amount
       Book.joins(:comments).group('books.id').order('count(comments.commentable_id) desc').limit(amount)

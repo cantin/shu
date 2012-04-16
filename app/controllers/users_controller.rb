@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  skip_before_filter :authenticate_user!, only: :show
+  skip_before_filter :authenticate_user!, only: [:show, :index]
 
   def index
     @users = User.all
@@ -8,13 +8,24 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
 
-    @follow_books = @user.following_by_type "Book"
+    @follow_user = @user.following_by_type 'User'
     @upload_books = @user.books
+    @comment = @user.comments
   end
 
   def books
     @books = current_user.books.page(params[:page]).per(10)
 
     render 'homes/index'
+  end
+
+  def follow
+    user = User.find params[:id]
+
+    current_user.follow(user)
+
+    respond_to do |format|
+      format.json { render json: {}, status: :ok }
+    end
   end
 end

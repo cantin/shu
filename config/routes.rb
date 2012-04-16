@@ -1,6 +1,7 @@
 Shu::Application.routes.draw do
 
   get '/books/search' => 'books#search', as: :book_search
+  post '/users/follow' => 'users#follow', as: :user_follow_path
   resources :books
   resources :homes
   get "/books/tags/:name" => 'books#tags'
