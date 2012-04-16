@@ -4,9 +4,6 @@
       %h2 所有书籍
     .books-list
       = render partial: 'books/list', locals: { books: @books, page: true }
-    .book-tags
-      = render partial: 'books/tags', locals: { tags: @tags }
-    .most-commentd-books
-      %h3 最多人评价书籍
-      = render partial: 'books/list', locals: { books: @mc_books, page: false }
+  .fl.w300
+    = render partial: 'homes/right'
 

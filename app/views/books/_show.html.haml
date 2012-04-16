@@ -1,0 +1,16 @@
+.brief
+  %h3.name= @book.name
+  .book-cover= image_tag @book.cover.medium.url, class: 'thumbnail'
+  .book-meta
+    %p= "作者：#{@book.author}"
+    %p= "ISBN：#{@book.ISBN}"
+    %p= "添加者：#{@book.user.name}" if @book.user
+    %p= "添加时间：#{@book.created_at}"
+.abstract
+  %h3.content_abstract 内容简介......
+  %p.intro= @book.content_abstract
+  %h3.author_abstract 作者简介......
+  %p.intro= @book.author_abstract
+.download
+  %h3.download 下载......
+  = link_to @book.name, @book.content.url

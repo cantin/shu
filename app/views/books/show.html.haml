@@ -1,26 +1,6 @@
-%p#notice= notice
-
-%p
-  %b Name:
-  = @book.name
-%p
-  %b Content abstract:
-  = @book.content_abstract
-%p
-  %b Author abstract:
-  = @book.author_abstract
-%p
-  %b Author:
-  = @book.author
-%p
-  %b Isbn:
-  = @book.ISBN
-%p
-  %b Image:
-  = image_tag @book.cover.url
-  %b down
-  = link_to 'down', @book.content.url
-
-= link_to 'Edit', edit_book_path(@book)
-\|
-= link_to 'Back', books_path
+.content
+  .fl.w600
+    .book-show
+      = render partial: 'books/show'
+  .fl.w300
+    = render partial: 'homes/right'

@@ -1,10 +1,9 @@
 class BooksController < ApplicationController
   skip_before_filter :authenticate_user!, only: [ :index, :show, :search, :tags ]
   protect_from_forgery :except => :search
+
   def index
     @books = Book.includes(:user).page(params[:page]).per(10)
-    @mc_books = Book.most_commented_books 10
-    @tags = Book.tag_counts_on(:tags)
 
     render 'homes/index'
   end
@@ -16,8 +15,6 @@ class BooksController < ApplicationController
 
   def tags
     @books = Book.tagged_with(params[:name]).page(params[:page]).per(10)
-    @mc_books = Book.most_commented_books 10
-    @tags = Book.tag_counts_on(:tags)
 
     render 'homes/index'
   end
