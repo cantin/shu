@@ -14,7 +14,7 @@ end
   b = Book.create(name: Faker::Product.product_name, author: Faker::Name.name, ISBN: rand(111111111111), user_id: rand(99)+1 )
 
   rand(i+1).times.each do
-    b.comments.create(title: Faker::Name.name, comment: Faker::LoremCN.sentences)
+    b.comments.create(title: Faker::Name.name, comment: Faker::LoremCN.sentences, user_id: rand(50))
   end
 
   b.tag_list = [ tags[rand(6)], tags[rand(6)] ]

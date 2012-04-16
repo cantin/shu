@@ -29,6 +29,7 @@
       signed_up: '你已经成功注册。不出意外的话，一份验证邮件已发往你的邮箱'
       updated: '你已成功更新你的账户'
       destroyed: '再见！你的账户已被成功取消。我们希望再次看到你'
+      signed_up_but_unconfirmed: '请前往您的注册邮箱完成注册'
     unlocks:
       send_instructions: '几分钟后你会收到一份关于如何解锁账户说明的邮件'
       unlocked: '你的账户已被成功解锁。现在你已经登陆'
