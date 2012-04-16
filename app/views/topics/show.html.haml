@@ -1,0 +1,15 @@
+.content
+  %h3= @topic.title
+  .topic-owner
+    %a{ href: user_path(@topic.user) }
+      = image_tag @topic.user.avatar.small.url, class: 'thumbnail'
+    %p= @topic.user.name
+  .topic-content
+    %p= @topic.content
+  .topic-comment
+    %ul
+    - @topic.comments.includes(:user).each do |c|
+      %li
+        %p= "标题：#{c.title}"
+        %p= "评论者：#{c.user.name}"
+        %p= "评论：#{c.comment}"

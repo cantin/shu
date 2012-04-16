@@ -1,0 +1,5 @@
+.topic-tags
+  %h3 节点
+  - tags = Topic.tag_counts_on(:tags)
+  - tags.each do |tag|
+    = link_to tag.name, "/topics/#{tag.name}"

@@ -2,7 +2,6 @@
 
 tags = %w(计算机 文学 历史 哲学 心理学 随笔 科普)
 
-
 100.times.each do |i|
   b = Book.create(name: Faker::Product.product_name, author: Faker::Name.name, ISBN: rand(111111111111), user_id: rand(99)+1 )
 

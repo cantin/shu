@@ -10,7 +10,8 @@ class UsersController < ApplicationController
 
     @follow_user = @user.following_by_type 'User'
     @upload_books = @user.books
-    @comment = @user.comments
+    #@comment = @user.comments
+    @comment = Book.find_comments_by_user @user
   end
 
   def books

@@ -12,6 +12,7 @@ ActiveRecord::Base.transaction do
 
   load File.join(File.dirname(__FILE__), "user_seeds.rb")
   load File.join(File.dirname(__FILE__), "book_seeds.rb")
+  load File.join(File.dirname(__FILE__), "topic_seeds.rb")
 
   Book.create!(name: "ruby on rails", author: "someone",
                cover: File.open("#{Rails.root}/app/assets/images/rails.png"),
