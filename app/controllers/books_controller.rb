@@ -1,5 +1,5 @@
 class BooksController < ApplicationController
-  skip_before_filter :authenticate_user!, only: [ :index, :show, :search ]
+  skip_before_filter :authenticate_user!, only: [ :index, :show, :search, :tags ]
   def index
     @books = Book.includes(:user).page(params[:page]).per(10)
     @mc_books = Book.most_commented_books 10
@@ -11,6 +11,14 @@ class BooksController < ApplicationController
   def search
     q = { name_cont: params[:book_name] }
     @books = Book.search(q).result
+  end
+
+  def tags
+    @books = Book.tagged_with(params[:name]).page(params[:page]).per(10)
+    @mc_books = Book.most_commented_books 10
+    @tags = Book.tag_counts_on(:tags)
+
+    render 'homes/index'
   end
 
   # GET /books/1
