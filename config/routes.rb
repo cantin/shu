@@ -1,6 +1,6 @@
 Shu::Application.routes.draw do
 
-  match '/books/search' => 'books#search', as: :book_search, via: :post
+  get '/books/search' => 'books#search', as: :book_search
   resources :books
   resources :homes
   get "/books/tags/:name" => 'books#tags'
