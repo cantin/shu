@@ -1,18 +1,20 @@
 Shu::Application.routes.draw do
+  mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
+  devise_for :users
 
   get '/books/search' => 'books#search', as: :book_search
-  post '/users/follow' => 'users#follow', as: :user_follow_path
-  resources :books
-  resources :homes
   get "/books/tags/:name" => 'books#tags'
-  get '/user/books' => 'users#books'
   post '/books/:id/comment' => 'comments#create', as: :comments_path
 
-  mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
+  post '/users/follow' => 'users#follow', as: :user_follow_path
+  get '/user/books' => 'users#books'
 
-  devise_for :users
+  get '/topics/:name' => 'topics#tags'
+
   resources :users
   resources :topics
+  resources :books
+  resources :homes
 
   root to: 'homes#index'
   # The priority is based upon order of creation:
