@@ -1,4 +1,7 @@
 .content
+  = render partial: 'layouts/alert'
+  .topic-new
+    =link_to '添加主题', new_topic_path, class: 'btn'
   .fl.w600
     = render partial: 'topics/list'
   .fl.w300

@@ -4,12 +4,12 @@ Shu::Application.routes.draw do
 
   get '/books/search' => 'books#search', as: :book_search
   get "/books/tags/:name" => 'books#tags'
-  post '/books/:id/comment' => 'comments#create', as: :comments_path
+  post '/books/:id/comment' => 'comments#create', as: :comments
 
-  post '/users/follow' => 'users#follow', as: :user_follow_path
+  post '/users/follow' => 'users#follow', as: :user_follow
   get '/user/books' => 'users#books'
 
-  get '/topics/tags/:name' => 'topics#tags'
+  get '/topics/tags/:name' => 'topics#tags', as: :topics_tag
 
   resources :users
   resources :topics

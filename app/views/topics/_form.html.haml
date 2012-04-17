@@ -1,0 +1,7 @@
+.form.container.master-container
+  = simple_form_for(@topic, :html => {:class => 'form-horizontal' }) do |f|
+    = f.input :title, label: '标题'
+    = f.input :content, label: '内容', input_html: { rows: 8, style: "margin: 0px; width: 500px" }
+    = f.label '节点'
+    = f.select :tag_list, @tags
+    = f.button :submit, value: '提交'
