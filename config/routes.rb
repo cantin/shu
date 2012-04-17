@@ -9,7 +9,7 @@ Shu::Application.routes.draw do
   post '/users/follow' => 'users#follow', as: :user_follow_path
   get '/user/books' => 'users#books'
 
-  get '/topics/:name' => 'topics#tags'
+  get '/topics/tags/:name' => 'topics#tags'
 
   resources :users
   resources :topics
