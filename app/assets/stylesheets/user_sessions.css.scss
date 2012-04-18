@@ -10,4 +10,17 @@ label.inline-label {
   h1{
     @include h2-title
   }
+
+  fieldset {
+    margin-top: 5px;
+    margin-left: 100px;
+  }
+
+  span.forget-serect {
+    margin-left: 5px;
+  }
+
+  button.btn {
+    margin-left: 350px;
+  }
 }

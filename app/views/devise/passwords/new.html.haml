@@ -1,0 +1,8 @@
+.content
+  %h2 忘记密码
+  = simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f|
+    = f.error_notification
+    = f.input :email, required: true
+    = f.button :submit, '提交'
+
+  = render 'links'

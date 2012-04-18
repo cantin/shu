@@ -3,5 +3,13 @@
   = render partial: 'books/tags', locals: { tags: @tags }
 .most-commentd-books
   %h3 最多人评价书籍
-  - @mc_books = Book.most_commented_books 10
-  = render partial: 'books/list', locals: { books: @mc_books, page: false }
+  - books = Book.most_commented_books 8
+  -#= render partial: 'books/list', locals: { books: @mc_books, page: false }
+  .mc-book
+    - books.each do |book|
+      .fl.ml20
+        %a{ href: book_path(book) }
+          = image_tag book.cover.small.url, class: 'thumbnail'
+        %p= link_to book.name, book_path(book), class: 'name'
+        .clear
+

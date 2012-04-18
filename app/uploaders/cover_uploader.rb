@@ -33,14 +33,14 @@ class CoverUploader < CarrierWave::Uploader::Base
     "/assets/fallback/" + [version_name, "default.png"].compact.join('_')
   end
 
-  process :resize_to_fit => [210, 150]
+  process :resize_to_fit => [110, 150]
 
   version :small do
-    process :resize_to_fit => [90, 90]
+    process :resize_to_fit => [70, 100]
   end
 
   version :medium do
-    process :resize_to_fit => [210, 150]
+    process :resize_to_fit => [110, 150]
   end
 
   def extension_white_list
