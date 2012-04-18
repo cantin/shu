@@ -1,5 +1,7 @@
-.topic-tags
+.topic-tags.tag-list
   %h3 节点
   - tags = Topic.tag_counts_on(:tags)
   - tags.each do |tag|
     = link_to tag.name, "/topics/tags/#{tag.name}"
+  .topic-new.mt10
+    =link_to '添加主题', new_topic_path, class: 'btn'

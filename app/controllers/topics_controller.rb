@@ -30,7 +30,7 @@ class TopicsController < ApplicationController
       redirect_to topics_tag_path(@topic.tags.first.name)
     else
       flash[:notice] = '创建主题失败'
-      redirect_to 'topics/new'
+      redirect_to '/topics/new'
     end
   end
 end

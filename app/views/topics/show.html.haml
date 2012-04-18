@@ -1,15 +1,19 @@
 .content
   %h3= @topic.title
   .topic-owner
-    %a{ href: user_path(@topic.user) }
-      = image_tag @topic.user.avatar.small.url, class: 'thumbnail'
-    %p= @topic.user.name
+    %p.mt10<
+      = link_to @topic.user.name, user_path(@topic.user)
+      发表于
+      = @topic.created_at
+  .clear
   .topic-content
     %p= @topic.content
   .topic-comment
     %ul
     - @topic.comments.includes(:user).each do |c|
-      %li
+      %li.comment
+        %p<
+          评论者：
+          = link_to c.user.name, user_path(c.user)
         %p= "标题：#{c.title}"
-        %p= "评论者：#{c.user.name}"
         %p= "评论：#{c.comment}"
