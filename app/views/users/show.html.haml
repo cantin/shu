@@ -20,5 +20,6 @@
             对
             = link_to c.commentable.name, book_path(c.commentable)
             的评论
+          %p= "发表于：#{c.created_at}"
           %p= "标题：#{c.title}"
           %p= "评论：#{c.comment}"

@@ -30,6 +30,7 @@
       %p<
         评论者：
         = link_to c.user.name, user_path(c.user)
+      %p= "发表于：#{c.created_at}"
       %p= "评论：#{c.comment}"
 .commenting
   %h3 写下你的书评

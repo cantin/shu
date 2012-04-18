@@ -2,8 +2,6 @@ class UsersController < ApplicationController
   skip_before_filter :authenticate_user!, only: [:show, :index]
 
   def index
-    #@users = User.all
-
     @latest_users = User.last(20)
     @most_active_users = User.most_active_users 20
   end
