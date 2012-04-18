@@ -7,7 +7,7 @@
       = link_to book.name, book_path(book), class: 'name'
     %p 作者：#{book.author }
     %p<
-      = link_to(book.user.name, user_path(book.user)) if book.user
+      = link_to(book.user.name, user_path(book.user))
       上传于
       = book.created_at
     .clear

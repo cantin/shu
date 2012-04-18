@@ -1,6 +1,6 @@
 #encoding: utf-8
 
-tags = %w(计算机 文学 历史 哲学 心理学 随笔 科普)
+tags = %w(计算机 文学 历史 哲学 心理学 随笔 科普 技术 小说 美术)
 
 100.times.each do |i|
   b = Book.create(name: Faker::Product.product_name, author: Faker::Name.name, 
@@ -13,7 +13,7 @@ tags = %w(计算机 文学 历史 哲学 心理学 随笔 科普)
     b.comments.create(title: Faker::Name.name, comment: Faker::LoremCN.sentences, user_id: rand(50) + 1)
   end
 
-  b.tag_list = [ tags[rand(6)], tags[rand(6)] ]
+  b.tag_list = [ tags[rand(10)], tags[rand(10)] ]
   b.save
 end
 
