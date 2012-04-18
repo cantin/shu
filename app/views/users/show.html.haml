@@ -2,7 +2,8 @@
   .user-show
     = image_tag @user.avatar.medium.url, class: 'fl'
     %h3 #{@user.name}
-    = link_to '关注他', "javascript:void(0)", class: 'following-user btn', value: "#{@user.id}" unless current_page?(current_user)
+    = link_to '关注他', "javascript:void(0)", class: 'following-user btn', value: "#{@user.id}" unless current_page?(current_user) || current_user.following?(@user)
+    = link_to '取消关注他', "javascript:void(0)", class: 'unfollowing-user btn', value: "#{@user.id}" if current_user && !current_page?(current_user) && current_user.following?(@user)
     .clear
     %h3.mt10 #{@user.name}关注的人......
     .mt10

@@ -12,6 +12,16 @@ jQuery ->
         alert('关注失败：' + data.responseText)
       success: (data) ->
         alert('关注成功')
+  jQuery('.unfollowing-user').click ->
+    jQuery.ajax
+      type: 'post'
+      url: '/users/unfollow'
+      data: { id: jQuery(@).attr('value') }
+      error: (data) ->
+        alert('取消关注失败：' + data.responseText)
+      success: (data) ->
+        alert('取消关注成功')
+
 
 
 

@@ -7,6 +7,7 @@ Shu::Application.routes.draw do
   post '/books/:id/comment' => 'comments#create', as: :comments
 
   post '/users/follow' => 'users#follow', as: :user_follow
+  post '/users/unfollow' => 'users#unfollow', as: :user_unfollow
   get '/user/books' => 'users#books'
 
   get '/topics/tags/:name' => 'topics#tags', as: :topics_tag
