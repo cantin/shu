@@ -1,6 +1,8 @@
 .content
-  %ul
-  - @users.each do |user|
-    %li
-      = image_tag user.avatar.small.url
-      = link_to user.name, user_path(user)
+  .lastest-users
+    %h3 新进成员
+    = render partial: 'list', locals: { users: @latest_users }
+  .clear
+  .most-active-users
+    %h3 最多贡献
+    = render partial: 'list', locals: { users: @most_active_users }

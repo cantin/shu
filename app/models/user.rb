@@ -15,4 +15,10 @@ class User < ActiveRecord::Base
   acts_as_follower
   acts_as_followable
   acts_as_taggable_on :interests
+
+  class << self
+    def most_active_users amount
+      User.joins(:books).group('users.id').order('count(books.user_id) desc').limit(amount)
+    end
+  end
 end

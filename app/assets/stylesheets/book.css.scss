@@ -24,3 +24,22 @@
     width: 100px;
   }
 }
+
+
+.book-show {
+  .book-meta {
+    margin-left: 250px;
+  }
+  .abstract {
+    margin-top: 10px;
+  }
+  .comment {
+    margin-top: 10px;
+    li {
+      list-style: none;
+      border-bottom: 1px dashed  #E2E2E2;
+      margin-bottom: 5px;
+    }
+  }
+}
+

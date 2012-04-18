@@ -1,12 +1,13 @@
 .brief
   %h3.name= @book.name
-  .book-cover= image_tag @book.cover.medium.url, class: 'thumbnail'
+  = image_tag @book.cover.medium.url, class: 'thumbnail fl'
   .book-meta
     %p= "作者：#{@book.author}"
     %p= "ISBN：#{@book.ISBN}"
     %p= "添加者：#{@book.user.name}" if @book.user
     %p= "添加时间：#{@book.created_at}"
     %p= "标签：#{@book.tags.map { |t| t.name }.join(",")}"
+  .clear
 .abstract
   %h3.content_abstract 内容简介......
   %p.intro= @book.content_abstract
@@ -21,15 +22,17 @@
   - @book.comments.includes(:user).each do |c|
     %li
       %p= "标题：#{c.title}"
-      %p= "评论者：#{c.user.name}"
+      %p<
+        评论者：
+        = link_to c.user.name, user_path(c.user)
       %p= "评论：#{c.comment}"
 .commenting
   %h3 写下你的书评
   - if current_user
     = simple_form_for(@comment, html: { class: 'form-horizontal' }, url: "/books/#{@book.id}/comment") do |f|
       = f.input :title, label: '标题'
-      = f.input :comment, label: '评论', input_html: { rows: 8, style: "margin: 0px; width: 500px" }
-      = f.button :submit, value: '提交'
+      = f.input :comment, label: '评论', input_html: { rows: 8, style: "margin: 0px; width: 400px" }
+      = f.button :submit, value: '提交',  style: "margin-left: 500px;"
   - else
     %p 请登录后评论
     = link_to '登录', new_user_session_path, class: 'btn'
