@@ -6,11 +6,17 @@
   li {
     list-style: none;
     float: left;
-    min-height: 130px;
+    min-height: 100px;
     margin-left: 20px;
   }
 
   p {
     width: 100px;
+  }
+}
+
+.user-show {
+  .following-user {
+    margin-left: 50px;
   }
 }

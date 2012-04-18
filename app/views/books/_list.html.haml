@@ -1,7 +1,7 @@
 - books.each do |book|
   .book
     %a{ href: book_path(book) }
-      = image_tag book.cover.small.url, class: 'thumbnail fl'
+      = image_tag book.cover.small.url, class: 'fl'
     %p<
       书名：
       = link_to book.name, book_path(book), class: 'name'

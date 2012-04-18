@@ -9,7 +9,7 @@
     - books.each do |book|
       .fl.ml20
         %a{ href: book_path(book) }
-          = image_tag book.cover.small.url, class: 'thumbnail'
+          = image_tag book.cover.small.url
         %p= link_to book.name, book_path(book), class: 'name'
         .clear
 

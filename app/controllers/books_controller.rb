@@ -1,3 +1,4 @@
+#encoding: utf-8
 class BooksController < ApplicationController
   skip_before_filter :authenticate_user!, only: [ :index, :show, :search, :tags ]
   protect_from_forgery :except => :search
@@ -55,7 +56,7 @@ class BooksController < ApplicationController
 
     respond_to do |format|
       if @book.save
-        format.html { redirect_to @book, notice: 'Book was successfully created.' }
+        format.html { redirect_to @book, notice: '上传书籍成功' }
         format.json { render json: @book, status: :created, location: @book }
       else
         format.html { render action: "new" }

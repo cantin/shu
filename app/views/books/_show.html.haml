@@ -1,6 +1,6 @@
 .brief
   %h3.name= @book.name
-  = image_tag @book.cover.medium.url, class: 'thumbnail fl'
+  = image_tag @book.cover.medium.url, class: 'fl'
   .book-meta
     %p= "作者：#{@book.author}"
     %p= "ISBN：#{@book.ISBN}"
@@ -29,10 +29,10 @@
 .commenting
   %h3 写下你的书评
   - if current_user
-    = simple_form_for(@comment, html: { class: 'form-horizontal' }, url: "/books/#{@book.id}/comment") do |f|
+    = simple_form_for(@comment, html: { class: 'mt10' }, url: "/books/#{@book.id}/comment") do |f|
       = f.input :title, label: '标题'
       = f.input :comment, label: '评论', input_html: { rows: 8, style: "margin: 0px; width: 400px" }
-      = f.button :submit, value: '提交',  style: "margin-left: 500px;"
+      = f.button :submit, value: '提交',  style: "margin-left: 300px;"
   - else
     %p 请登录后评论
     = link_to '登录', new_user_session_path, class: 'btn'

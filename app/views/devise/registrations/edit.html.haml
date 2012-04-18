@@ -10,6 +10,9 @@
         = f.label :name, '昵称'
         .input= f.text_field :name, :placeholder => '昵称', :label => '昵称', class: 'xlarge'
       .clearfix
+        = f.label :avatar, '更新头像'
+        .input= f.file_field :avatar, class: 'xlarge'
+      .clearfix
         = f.label :current_password, '当前密码（必须填写）'
         .input= f.password_field :current_password, :placeholder => '当前密码', :label => '当前密码', class: 'xlarge'
       .clearfix

@@ -1,6 +1,6 @@
 %ul
   - users.each do |user|
-    %li
+    %li.user
       %a{ href: user_path(user) }
-        = image_tag user.avatar.small.url, class: 'thumbnail fl'
-      %p= link_to user.name, user_path(user)
+        = image_tag user.avatar.small.url
+      %p{ style: 'width: 60px' }= link_to user.name, user_path(user)
