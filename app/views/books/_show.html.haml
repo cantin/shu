@@ -4,9 +4,14 @@
   .book-meta
     %p= "作者：#{@book.author}"
     %p= "ISBN：#{@book.ISBN}"
-    %p= "添加者：#{@book.user.name}" if @book.user
+    %p<
+      添加者：
+      = link_to @book.user.name, user_path(@book.user)
     %p= "添加时间：#{@book.created_at}"
-    %p= "标签：#{@book.tags.map { |t| t.name }.join(",")}"
+    %p< 
+      标签：
+      - @book.tags.each do |t|
+        = link_to t.name, books_tag_path(t.name)
   .clear
 .abstract
   %h3.content_abstract 内容简介......

@@ -2,7 +2,7 @@
   = render partial: 'layouts/alert'
   .fl.w600
     .book-toolbar
-      %h2 所有书籍
+      %h2=  params[:name] ? params[:name] : "所有书籍"
     .books-list
       = render partial: 'books/list', locals: { books: @books, page: true }
   .fr.w300
