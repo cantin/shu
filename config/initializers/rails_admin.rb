@@ -7,7 +7,7 @@ RailsAdmin.config do |config|
   # require 'i18n'
   # I18n.default_locale = :de
 
-  config.current_user_method { current_user } # auto-generated
+  config.current_user_method { current_admin } # auto-generated
 
   # If you want to track changes on your models:
   # config.audit_with :history, User
@@ -19,7 +19,6 @@ RailsAdmin.config do |config|
   config.main_app_name = ['Shu', 'Admin']
   # or for a dynamic name:
   # config.main_app_name = Proc.new { |controller| [Rails.application.engine_name.titleize, controller.params['action'].titleize] }
-
 
   #  ==> Global show view settings
   # Display empty fields in show views
