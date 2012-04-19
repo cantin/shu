@@ -1,4 +1,5 @@
 .content
+  = render partial: 'layouts/alert'
   %h3= @topic.title
   .topic-owner
     %p.mt10<
@@ -17,3 +18,13 @@
           = link_to c.user.name, user_path(c.user)
         %p= "标题：#{c.title}"
         %p= "评论：#{c.comment}"
+  .commenting
+    %h3 写下你的评论
+    - if current_user
+      = simple_form_for(@comment, html: { class: 'mt10' }, url: "/topics/#{@topic.id}/comment") do |f|
+        = f.input :title, label: '标题'
+        = f.input :comment, label: '评论', input_html: { rows: 8, style: "margin: 0px; width: 400px" }
+        = f.button :submit, value: '提交',  style: "margin-left: 300px;"
+    - else
+      %p 请登录后评论
+      = link_to '登录', new_user_session_path, class: 'btn'

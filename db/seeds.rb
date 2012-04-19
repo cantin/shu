@@ -10,6 +10,8 @@ ActiveRecord::Base.transaction do
   u = User.new(name: "shu", email: 'admin@shu.com', password: '123456', password_confirmation: '123456')
   u.confirm!
 
+  Admin.create(email: 'admin@shu.com', password:'123456', password_confirmation: '123456')
+
   load File.join(File.dirname(__FILE__), "user_seeds.rb")
   load File.join(File.dirname(__FILE__), "book_seeds.rb")
   load File.join(File.dirname(__FILE__), "topic_seeds.rb")

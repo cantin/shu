@@ -15,6 +15,7 @@ Shu::Application.routes.draw do
   get '/user/books' => 'users#books'
 
   get '/topics/tags/:name' => 'topics#tags', as: :topics_tag
+  post '/topics/:id/comment' => 'comments#topic_create'
 
   resources :users
   resources :topics
