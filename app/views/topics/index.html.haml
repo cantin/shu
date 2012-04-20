@@ -1,5 +1,5 @@
 .content
-  %h2 主题
+  %h2=  params[:name] ? params[:name] : "所有主题"
   = render partial: 'layouts/alert'
   .fl.w600
     = render partial: 'topics/list'
