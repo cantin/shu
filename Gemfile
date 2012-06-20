@@ -48,7 +48,7 @@ group :test do
   gem 'simplecov'
   gem 'rspec-rails'
   gem 'capybara'
-  gem 'capybara-webkit'
+  #gem 'capybara-webkit'
   gem 'database_cleaner'
   gem 'shoulda-matchers'
   gem 'factory_girl_rails', require: false
