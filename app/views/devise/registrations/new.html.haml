@@ -3,6 +3,9 @@
     %h1 会员注册
     = simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name), :validate => true) do |f|
       .clearfix
+        = f.label :name
+        .input= f.text_field :name, :placeholder => '用户昵称', :label => '用户昵称', :validate => { :presence => true }
+      .clearfix
         = f.label :email
         .input= f.text_field :email, :placeholder => '电子邮箱', :label => '电子邮箱', :validate => { :presence => true }
       .clearfix
