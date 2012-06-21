@@ -1,5 +1,9 @@
-default_run_options[:pty] = true
+set :rvm_ruby_string, '1.9.3@shu' 
 
+require 'rvm/capistrano'
+require 'bundler/capistrano' 
+
+default_run_options[:pty] = true
 set :application, 'shu'
 set :repository,  "git://github.com/cantin/shu.git"
 set :branch, 'ubuntu'
@@ -17,7 +21,7 @@ set :server_domain, '192.168.32.130'
 
 role :web, server_domain
 role :app, server_domain
-role :db, server_domain
+role :db, server_domain, primary: true
 #role :db,  "your slave db-server here"
 
 # if you want to clean up old releases on each deploy uncomment this:

@@ -71,9 +71,6 @@ GEM
       rack-test (>= 0.5.4)
       selenium-webdriver (~> 2.0)
       xpath (~> 0.1.4)
-    capybara-webkit (0.11.0)
-      capybara (>= 1.0.0, < 1.2)
-      json
     carrierwave (0.5.8)
       activesupport (~> 3.0)
     childprocess (0.3.1)
@@ -214,6 +211,8 @@ GEM
       railties (>= 3.0)
       rspec (~> 2.8.0)
     rubyzip (0.9.6.1)
+    rvm-capistrano (1.2.2)
+      capistrano (>= 2.0.0)
     sass (3.1.15)
     sass-rails (3.2.4)
       railties (~> 3.2.0)
@@ -277,7 +276,6 @@ DEPENDENCIES
   bootstrap-sass
   capistrano
   capybara
-  capybara-webkit
   carrierwave
   client_side_validations
   coffee-rails (~> 3.2.1)
@@ -301,6 +299,7 @@ DEPENDENCIES
   rails_admin!
   ransack
   rspec-rails
+  rvm-capistrano
   sass-rails (~> 3.2.3)
   settingslogic
   shoulda-matchers
